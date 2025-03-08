@@ -104,7 +104,7 @@ Least prioritized ideas are marked with *
 
 ![Screenshot 2025-03-07 223638](https://github.com/user-attachments/assets/e3a333c3-b451-4b26-abd6-c3ed7dca48a6)
 
-*Figure 5.2 - Detailed AI and Annotated Weather Data Collection System*
+*Figure 5.2 - Overview of Weather Data Collection System*
 
 Page Description on how our device using the figures given behave in an science exhibit enviroment
 ---
