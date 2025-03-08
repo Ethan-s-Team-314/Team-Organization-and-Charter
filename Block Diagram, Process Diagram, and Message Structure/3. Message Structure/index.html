@@ -29,7 +29,7 @@
 
     
       
-        <title>3. Message Structure - EGR314 Team 308</title>
+        <title>General Message Structure - EGR314 Team 308</title>
       
     
     
@@ -92,6 +92,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#general-message-structure" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -123,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Message Structure
+              General Message Structure
             
           </span>
         </div>
@@ -407,12 +412,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    3. Message Structure
+    General Message Structure
   </span>
   
 
@@ -585,6 +592,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -607,12 +616,210 @@
   
 
 
-  <h1>3. Message Structure</h1>
-
-<p><a href="https://docs.google.com/document/d/1LwvJPzn-bZkAXi4EAb8zRXNq1SdvTpW3njgFiEyajlE/edit?tab=t.0">Message Structure Spreadsheet</a></p>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/dfe7b203-2c54-4d27-9b34-488628426968" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screenshot 2025-02-14 at 10 11 56 PM" src="https://github.com/user-attachments/assets/dfe7b203-2c54-4d27-9b34-488628426968" /></a></p>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/8e16e537-ae5c-47ed-9470-f2960a9b3d09" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screenshot 2025-02-14 at 10 12 20 PM" src="https://github.com/user-attachments/assets/8e16e537-ae5c-47ed-9470-f2960a9b3d09" /></a></p>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/8da6f04f-2297-4487-991c-39b2f6035149" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screenshot 2025-02-14 at 10 12 33 PM" src="https://github.com/user-attachments/assets/8da6f04f-2297-4487-991c-39b2f6035149" /></a></p>
+<h1 id="general-message-structure">General Message Structure</h1>
+<table>
+<thead>
+<tr>
+<th><strong>Byte Range</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 - 1</td>
+<td><strong>Header</strong> (0x41 0x5A)</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Source ID</strong> (uint8_t)</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Destination ID</strong> (uint8_t)</td>
+</tr>
+<tr>
+<td>4 - 61</td>
+<td><strong>Message Data</strong> (Variable Length &lt; 58 Bytes)</td>
+</tr>
+<tr>
+<td>62 - 63</td>
+<td><strong>Footer</strong> (0x59 0x42)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="message-types">Message Types</h1>
+<h2 id="1-set-system-speed">1. Set System Speed</h2>
+<p>Used when the In-person or Web-Person sets a command speed.<br />
+Sent from ESP32 and PIC18F47Q10.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (1 = Set Speed)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>Speed Value (e.g., 200m/s)</td>
+<td>uint16_t</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-request-sensor-data">2. Request Sensor Data</h2>
+<p>Used when ESP32 requests sensor data from PIC18F47Q10.<br />
+PIC18F responds with temperature, humidity, and water flow rate.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (2 = Request Sensor Data)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sensor ID (1 = DHT11, 2 = SEN0229)</td>
+<td>uint8_t</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-sensor-data-response">3. Sensor Data Response</h2>
+<p>Used when PIC18F sends sensor data back to ESP32.<br />
+Contains multiple sensor readings in a single message.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (3 = Sensor Data Response)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>Temperature (°C × 100, e.g., 25.5°C = 2550)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>5-6</td>
+<td>Humidity (% × 100, e.g., 50.1% = 5010)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>7-8</td>
+<td>Water Flow Rate (L/min × 100, e.g., 10.5 L/min = 1050)</td>
+<td>uint16_t</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-lcd-update-command">4. LCD Update Command</h2>
+<p>Sent from ESP32 to LCD (via SPI).</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (4 = LCD Update Command)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3-58</td>
+<td>Text String (e.g., “Speed: 200 m/s, Temperature: 30°C, Water flow Rate = 50 L/min”)</td>
+<td>char[55]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-cloud-update">5. Cloud Update</h2>
+<p>Sent from ESP32 to cloud via Wi-Fi.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (5 = Cloud Update)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3-58</td>
+<td>JSON String (Sensor Data)</td>
+<td>char[55]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-error-message">6. Error Message</h2>
+<p>Network Failure, Signal Loss.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (6 = Error Message)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Subsystem ID (1 = PIC18, 2 = ESP32, 3 = Temperature Sensor, 4 = Water Turbine, 5 = LCD)</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td>4-58</td>
+<td>Error String</td>
+<td>char[55]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="example-message-format">Example Message Format</h1>
+<p>For a message requesting sensor data from PIC18F47Q10:</p>
+<p><strong>Header</strong>: 0x41 0x5A<br />
+<strong>Source ID</strong>: 0x01 (ESP32)<br />
+<strong>Destination ID</strong>: 0x02 (PIC18F47Q10)<br />
+<strong>Message Data</strong>:<br />
+- Message Type: 0x02 (Request Sensor Data)<br />
+- Sensor ID: 0x01 (DHT11)<br />
+<strong>Footer</strong>: 0x59 0x42</p>
 
 
 
