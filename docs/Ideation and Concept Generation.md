@@ -1,7 +1,7 @@
 # **Ideation and Concept Generation**
 
 ## **Team Members**
-Ethan Peterson, Siddhant Kulkarni, Kevin Shah, Sanjit Selvakumar Kavitha
+Ethan Peterson, Siddhant Kulkarni, Kevin Shah, Sanjit Selvakumar, Kavitha
 
 ---
 
@@ -114,6 +114,14 @@ Our decision-making process involved evaluating the best ideas from our brainsto
 
 If deviations from our initial concept occurred, they were driven by insights gained from testing, research, and expert recommendations.
 
-Video Presentation
 ---
+
+## **Video Presentation**
 <iframe class="responsive" width="560" height="315" src="https://www.youtube.com/embed/7UG-YCw4WZ8?si=zjqBop_FBaR4tDm3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+## **Conclusion**
+The brainstorming and ideation process was instrumental in developing our vision for the weather monitoring system. Our final selection combines accessibility with interactivity, ensuring a scientifically rich and engaging learning experience for K-12 students. The next steps will involve prototyping, user testing, and refining the system based on user feedback.
+
+---
