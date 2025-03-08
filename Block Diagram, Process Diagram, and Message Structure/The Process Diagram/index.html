@@ -611,30 +611,6 @@
 
 <p><a href="https://drive.google.com/drive/u/1/folders/19I_488VRz9nsvQRNoa4jgeBesulI3tln">Process Diagram</a>
 <a class="glightbox" href="https://github.com/user-attachments/assets/52425764-7ec4-4a00-8f8a-8b84439fadad" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screenshot 2025-02-14 at 10 56 16 PM" src="https://github.com/user-attachments/assets/52425764-7ec4-4a00-8f8a-8b84439fadad" /></a></p>
-<hr />
-<p>mermaid
-  sequenceDiagram
-    actor WebUser as Web User
-    participant ESP32 as Sanjit: ESP-32
-    participant PIC as Sanjit: PIC
-    participant Ethan as Ethan
-    participant Siddhant as Siddhant
-    participant Kevin as Kevin
-    actor InPerson as In-Person</p>
-<pre><code>WebUser-&gt;&gt;ESP32: Get me information for today's weather&lt;br&gt;Via WiFi
-ESP32-&gt;&gt;PIC: Display message in LCD&lt;br&gt;Via UART
-PIC-&gt;&gt;Ethan: Updates speed settings and prepares for sensor data calibration
-PIC-&gt;&gt;Siddhant: "Temperature: 30°C&lt;br&gt;Humidity: 80%"&lt;br&gt;Via I2C
-Siddhant-&gt;&gt;Kevin: "Water Flow Rate: 50 L/min"&lt;br&gt;Via I2C
-Kevin-&gt;&gt;InPerson: Set Speed to 200 m/s
-
-ESP32-&gt;&gt;PIC: Sends information of Temperature, Humidity, and Water Flow Rate&lt;br&gt;Via UART
-PIC-&gt;&gt;PIC: Process information&lt;br&gt;Speed, Temperature, Humidity, and Water Flow Rate
-PIC-&gt;&gt;Siddhant: "Speed: 200 m/s&lt;br&gt;Temperature: 30°C&lt;br&gt;Humidity: 80%&lt;br&gt;Water Rate: 50 L/min"&lt;br&gt;Via SPI
-Siddhant-&gt;&gt;Kevin: LCD Displays weather information
-Kevin-&gt;&gt;WebUser: Weather information is displayed
-</code></pre>
-<hr />
 
 
 
