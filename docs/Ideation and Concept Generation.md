@@ -98,11 +98,30 @@ Least prioritized ideas are marked with *
 
 ### **Developing Visual Representations**
 
-![AI Representation](https://github.com/user-attachments/assets/85f71a0e-90ce-47c7-883f-d050ac6b5ad6)
+![Screenshot 2025-03-07 223601](https://github.com/user-attachments/assets/c6580f80-2849-43cd-b637-b025bacc0ccb)
+
 *Figure 5.1 - AI-Generated Representation of Project*
 
-![Detailed Concept Illustration](https://github.com/user-attachments/assets/d56e44b4-83b1-4add-9d33-9b6342a8c28a)
+![Screenshot 2025-03-07 223638](https://github.com/user-attachments/assets/e3a333c3-b451-4b26-abd6-c3ed7dca48a6)
+
 *Figure 5.2 - Detailed AI and Annotated Weather Data Collection System*
+
+Page Description on how our device using the figures given behave in an science exhibit enviroment
+---
+
+The Weather Data Collection System (WDC) is an interactive exhibit designed to engage K-12 students in hands-on learning about meteorology. It incorporates a user-friendly interface, robust environmental protection, and clear instructional cues to enhance accessibility and usability. The system integrates ESP32 and PIC18F47Q10 microcontrollers, an I2C-based LCD display, and multiple sensors (DHT11 for temperature/humidity, BMP180 for atmospheric pressure) to provide real-time weather data collection and visualization.
+
+The weather and humidity monitoring system, as depicted in Figure 5.1 and further detailed in Figure 5.2, addresses critical issues raised in the "Suggested Guidelines for Designing Interactive Exhibits" by incorporating robust functionality and thoughtful design. Figure 5.2 highlights the integration of key components such as the ESP32, PIC18F47Q10, I2C communication protocol, and specific sensors like the DHT11 for temperature and humidity. These components form a comprehensive and interactive Weather Data Collection System (WDC), ensuring both technical reliability and user accessibility.
+
+One of the challenges highlighted in the guidelines is the need for devices to provide implicit cues for usage. The annotated Figure 5.2 demonstrates the inclusion of a clear, labeled LCD display that utilizes I2C communication for seamless data transmission, ensuring accurate and real-time updates of weather information such as temperature, humidity, and atmospheric pressure. This setup adheres to the principle of "visibility," as discussed in the guidelines, where devices are designed to make their operation intuitively clear. For instance, the ESP32 manages communication and processing while displaying updates, which eliminates ambiguity for users.
+
+The inclusion of tactile buttons, as shown in Figure 5.2, ensures effective mapping, as each control corresponds directly to its functionality, such as toggling data views or resetting sensors. This design minimizes user errors and enhances interaction, aligning with the guideline that "mapping helps to minimize incorrect responses" (p. 8). Furthermore, the PIC18F47Q10 acts as an additional microcontroller, managing peripheral devices like the DHT11 and BMP180, which measure temperature, humidity, and pressure respectively. These components communicate effectively through the I2C protocol, enabling accurate data collection and display.
+
+Durability and safety remain a core focus of this system. The detailed annotations in Figure 5.2 emphasize the use of robust materials for the device's enclosure, protecting sensitive electronics from environmental stressors like rain or heat. Safety measures such as insulated wiring and stable sensor mounts prevent hazards, supporting the recommendation that "interactive devices must be safe for visitors of all ages" (p. 8). Additionally, portability and ergonomic design ensure user comfort, making the WDC suitable for diverse audiences.
+
+Instructions for using the WDC are minimal yet effective, as reflected in the system’s design. The combination of clear on-device labels, simplified text on the LCD, and the logical arrangement of controls ensures ease of use, particularly for first-time users. By placing instructions near relevant controls and avoiding overloading users with information, the system adheres to the principle that "instructions should be easily available, kept simple, and layered for accessibility" (p. 9).
+
+Incorporating the features shown in Figure 5.2, including I2C communication, temperature and humidity sensors, the ESP32, and PIC18F47Q10, this weather monitoring system addresses user needs while tackling challenges in interactivity, durability, and safety. By adhering to the design principles outlined in the "Suggested Guidelines for Designing Interactive Exhibits," the system effectively bridges technical complexity and user-friendly interaction, making it an ideal educational tool for museum visitors.
 
 ---
 
