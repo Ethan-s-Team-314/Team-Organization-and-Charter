@@ -43,6 +43,8 @@
 
 ---
 
+
+
 ## 📊 **Humidity and Temperature Sensor**
 - [**BOM for 📊 Humidity and Temperature Sensor**](https://docs.google.com/spreadsheets/d/1XDYP-75lMF53_pUxz10kB5wWfIxgC6Pn/edit?gid=1046845005#gid=1046845005)
 
@@ -64,6 +66,7 @@
 
 ---
 
+
 ### **Key Components:**
 
 1. [**694108301002 Through hole plug in power source**](https://datasheet.ciiva.com/pdfs/VipMasterIC/IC/MIDC/MIDC-S-A0001192814/MIDC-S-A0001192814-1.pdf?src-supplier=IHS+Markit)
@@ -84,3 +87,7 @@
 16. [**NR6028T4R7M - Inductor**](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/610/NR6028T4R7M_SS.pdf)
 17. [**B3U-1000P - Switch**](https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3u.pdf)
 18. [**61301011821**](https://www.we-online.com/components/products/datasheet/6130xx11821.pdf)
+19. [**Diode**](https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf)
+
+---
+---
