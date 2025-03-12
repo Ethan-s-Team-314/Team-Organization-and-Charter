@@ -5,10 +5,16 @@
 ### ⚡ **Power Supply**
 - **WSU050 - 5VDC Power Supply**  
   ![Overall Specs WSU](https://github.com/user-attachments/assets/dc10a508-ec1d-462f-a71c-8584cde97fef)
+- Model 0930 9V AC/DC adapter
+- ![image](https://github.com/user-attachments/assets/3e446c83-6b12-47c2-bc71-58fee61850e3)
+
+  
 
 ### 🌡️ **Humidity Sensor**
-- **DHT11 - Humidity Sensor**  
-  [**PDF Datasheet**](https://github.com/user-attachments/files/18630566/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf)  
+**HDC2080DMBR**
+
+[**PDF Datasheet**](https://www.ti.com/lit/ds/symlink/hdc2080.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1741194715896&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fhdc2080)
+
   ![Electrical Characteristics](https://github.com/user-attachments/assets/68ef25b9-58d5-4356-8450-5e7f9221cc1c)
 
 ### 🖥️ **Display Modules**
