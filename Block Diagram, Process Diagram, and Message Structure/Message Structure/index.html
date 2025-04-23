@@ -29,7 +29,7 @@
 
     
       
-        <title>General Message Structure - EGR314 Team 308</title>
+        <title>Message Structure - EGR314 Team 308</title>
       
     
     
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              General Message Structure
+              Message Structure
             
           </span>
         </div>
@@ -399,7 +399,7 @@
         
   
   <span class="md-ellipsis">
-    General Message Structure
+    Message Structure
   </span>
   
 
@@ -616,6 +616,30 @@
   
 
 
+<p>Message Team Verification
+<strong>Message Table</strong></p>
+<table>
+<thead>
+<tr>
+<th>Message Type</th>
+<th>Message ID Type: <code>uint8_t</code></th>
+<th>Ethan Role: Sensor<br>ID: E</th>
+<th>Siddhant Role: Motor<br>ID: S</th>
+<th>Kevin Role: HMI<br>ID: K</th>
+<th>Sanjit Role: Web<br>ID: A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>sensor value</strong></td>
+<td><code>0x40</code></td>
+<td>Send: Turn motor on or off.</td>
+<td>Receive: Motor turns off or on due to temperature reading.</td>
+<td>Receive: (displayed on HMI)</td>
+<td>Receive: (mqtt topic: <code>/EGR314/TEAMXYZ/SENSOR1</code>)</td>
+</tr>
+</tbody>
+</table>
 <h1 id="general-message-structure">General Message Structure</h1>
 <table>
 <thead>
