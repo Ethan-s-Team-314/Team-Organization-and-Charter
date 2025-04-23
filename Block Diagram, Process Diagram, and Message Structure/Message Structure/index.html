@@ -449,6 +449,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#siddhant-messages" class="md-nav__link">
+    Siddhant Messages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethan-messages" class="md-nav__link">
+    Ethan Messages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sanjit-to-ethan-command" class="md-nav__link">
+    Sanjit to Ethan Command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#general-message-structure" class="md-nav__link">
     General Message Structure
   </a>
@@ -737,6 +758,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#siddhant-messages" class="md-nav__link">
+    Siddhant Messages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethan-messages" class="md-nav__link">
+    Ethan Messages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sanjit-to-ethan-command" class="md-nav__link">
+    Sanjit to Ethan Command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#general-message-structure" class="md-nav__link">
     General Message Structure
   </a>
@@ -938,6 +980,107 @@
 <td>Ethan (E)</td>
 <td>Sanjit (T), Kevin (K)</td>
 <td>Status update to others showing motor is ON.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="siddhant-messages">Siddhant Messages</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Action</strong></th>
+<th><strong>Message ID</strong></th>
+<th><strong>Recipient</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motor OFF</td>
+<td><code>FSST01FS</code></td>
+<td>Sanjit</td>
+<td>Motor off status update</td>
+</tr>
+<tr>
+<td></td>
+<td><code>FSSK01FS</code></td>
+<td>Kevin</td>
+<td>Motor off status update</td>
+</tr>
+<tr>
+<td>Motor Reverse Status</td>
+<td><code>FSST02FS</code></td>
+<td>Sanjit</td>
+<td>Motor is reversing</td>
+</tr>
+<tr>
+<td></td>
+<td><code>FSSK02FS</code></td>
+<td>Kevin</td>
+<td>Motor is reversing</td>
+</tr>
+<tr>
+<td>Motor Forward Status</td>
+<td><code>FSST03FS</code></td>
+<td>Sanjit</td>
+<td>Motor is running forward</td>
+</tr>
+<tr>
+<td></td>
+<td><code>FSSK02FS</code></td>
+<td>Kevin</td>
+<td>Motor is running forward</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ethan-messages">Ethan Messages</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Message ID</strong></th>
+<th><strong>Sender</strong></th>
+<th><strong>Recipient</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FSEK00FS</code></td>
+<td>Ethan</td>
+<td>Kevin</td>
+<td>Temperature message (<code>00</code> = temperature)</td>
+</tr>
+<tr>
+<td><code>FSET00FS</code></td>
+<td>Ethan</td>
+<td>Sanjit</td>
+<td>Temperature message (<code>00</code> = temperature)</td>
+</tr>
+<tr>
+<td><code>FSES00FS</code></td>
+<td>Ethan</td>
+<td>Siddhant</td>
+<td>Temperature message (<code>00</code> = temperature)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sanjit-to-ethan-command">Sanjit to Ethan Command</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Message ID</strong></th>
+<th><strong>Sender</strong></th>
+<th><strong>Recipient</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FSES03FS</code></td>
+<td>Sanjit</td>
+<td>Ethan</td>
+<td>Command to turn on</td>
 </tr>
 </tbody>
 </table>
