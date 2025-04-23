@@ -29,6 +29,34 @@
 | Motor ON Command (example)   | `FSTS02FS`                   | Sanjit (T)   | Ethan (E)                  | Similar process for turning motor ON; `02` could represent ON.                 |
 | Motor ON Status → Kevin & T  | `FSST02FS`, `FSSK02FS`       | Ethan (E)    | Sanjit (T), Kevin (K)      | Status update to others showing motor is ON.                                   |
 
+## Siddhant Messages
+
+| **Action**               | **Message ID** | **Recipient** | **Description**            |
+|--------------------------|----------------|---------------|----------------------------|
+| Motor OFF                | `FSST01FS`     | Sanjit        | Motor off status update    |
+|                          | `FSSK01FS`     | Kevin         | Motor off status update    |
+| Motor Reverse Status     | `FSST02FS`     | Sanjit        | Motor is reversing         |
+|                          | `FSSK02FS`     | Kevin         | Motor is reversing         |
+| Motor Forward Status     | `FSST03FS`     | Sanjit        | Motor is running forward   |
+|                          | `FSSK02FS`     | Kevin         | Motor is running forward   |
+
+---
+
+## Ethan Messages
+
+| **Message ID** | **Sender** | **Recipient** | **Description**                                |
+|----------------|------------|----------------|------------------------------------------------|
+| `FSEK00FS`     | Ethan      | Kevin          | Temperature message (`00` = temperature)       |
+| `FSET00FS`     | Ethan      | Sanjit         | Temperature message (`00` = temperature)       |
+| `FSES00FS`     | Ethan      | Siddhant       | Temperature message (`00` = temperature)       |
+
+---
+
+## Sanjit to Ethan Command
+
+| **Message ID** | **Sender** | **Recipient** | **Description**     |
+|----------------|------------|----------------|---------------------|
+| `FSES03FS`     | Sanjit     | Ethan          | Command to turn on  |
 
 
 
