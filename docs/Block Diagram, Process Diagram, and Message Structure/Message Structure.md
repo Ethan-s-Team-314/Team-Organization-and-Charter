@@ -1,3 +1,13 @@
+Message Team Verification
+**Message Table**
+
+| Message Type   | Message ID Type: `uint8_t` | Ethan Role: Sensor<br>ID: E            | Siddhant Role: Motor<br>ID: S                        | Kevin Role: HMI<br>ID: K                | Sanjit Role: Web<br>ID: A                                  |
+|----------------|-----------------------------|-----------------------------------------|-------------------------------------------------------|------------------------------------------|-------------------------------------------------------------|
+| **sensor value** | `0x40`                    | Send: Turn motor on or off.             | Receive: Motor turns off or on due to temperature reading. | Receive: (displayed on HMI)           | Receive: (mqtt topic: `/EGR314/TEAMXYZ/SENSOR1`)           |
+
+
+
+
 # General Message Structure
 
 | **Byte Range** | **Description**                                                                 |
