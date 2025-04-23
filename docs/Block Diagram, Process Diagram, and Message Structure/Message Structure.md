@@ -1,9 +1,34 @@
-Message Team Verification
-**Message Table**
 
-| Message Type   | Message ID Type: `uint8_t` | Ethan Role: Sensor<br>ID: E            | Siddhant Role: Motor<br>ID: S                        | Kevin Role: HMI<br>ID: K                | Sanjit Role: Web<br>ID: A                                  |
-|----------------|-----------------------------|-----------------------------------------|-------------------------------------------------------|------------------------------------------|-------------------------------------------------------------|
-| **sensor value** | `0x40`                    | Send: Turn motor on or off.             | Receive: Motor turns off or on due to temperature reading. | Receive: (displayed on HMI)           | Receive: (mqtt topic: `/EGR314/TEAMXYZ/SENSOR1`)           |
+## Team Member Roles
+
+| **Team Member** | **Role**           | **Character ID** |
+|-----------------|--------------------|------------------|
+| Siddhant        | Motor Subsystem    | S                |
+| Ethan           | Sensor Subsystem   | E                |
+| Kevin           | HMI Subsystem      | K                |
+| Sanjit          | Web Subsystem      | T                |
+
+---
+
+## Message Table (Message Type Overview)
+
+| **Message Type**              | **Message ID Type: uint8_t** | **Ethan Role: Sensor ID: E** | **Siddhant Role: Motor ID: S** | **Kevin Role: HMI ID: K** | **Sanjit Role: WebID: T** |
+|-------------------------------|-------------------------------|-------------------------------|-------------------------------|----------------------------|----------------------------|
+| sensor value                  | 0x40                          | Send: Turn motor on or off.  | Receive: Motor turns off or on due to temperature reading. | Receive: (displayed on HMI) | Receive: (mqtt topic: /EGR314/TEAMXYZ/SENSOR1) |
+
+---
+
+## Detailed Message Flow Table
+
+| **Message Purpose**           | **Message ID (8 bytes)**     | **Sender**   | **Receivers**             | **Description**                                                                 |
+|------------------------------|------------------------------|--------------|----------------------------|---------------------------------------------------------------------------------|
+| Send Temperature Data        | `FSTE01FS`                   | Sanjit (T)   | Ethan (E)                  | Sanjit sends temperature sensor data to Ethan.                                 |
+| Forward Temp to HMI + Web    | `FSET43FS`, `FSEK43FS`       | Ethan (E)    | Sanjit (T), Kevin (K)      | Ethan sends processed temperature (43) to Kevin (HMI) and Sanjit (Web).        |
+| Motor Off Command            | `FSTS01FS`                   | Sanjit (T)   | Ethan (E)                  | Sanjit requests motor OFF; Ethan checks if it applies to him and acts if so.   |
+| Motor OFF Status → Kevin & T | `FSST01FS`, `FSSK01FS`       | Ethan (E)    | Sanjit (T), Kevin (K)      | Ethan informs Kevin and Sanjit of updated motor status (motor OFF).            |
+| Motor ON Command (example)   | `FSTS02FS`                   | Sanjit (T)   | Ethan (E)                  | Similar process for turning motor ON; `02` could represent ON.                 |
+| Motor ON Status → Kevin & T  | `FSST02FS`, `FSSK02FS`       | Ethan (E)    | Sanjit (T), Kevin (K)      | Status update to others showing motor is ON.                                   |
+
 
 
 
