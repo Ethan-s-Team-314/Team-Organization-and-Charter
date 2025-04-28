@@ -29,7 +29,10 @@ Our mission is to develop a STEM-oriented, interactive educational display that 
 🔹 [Siddhant Kulkarni](https://smkulka6.github.io/smkulka6/Individual%20Schematic/)  
 
 ---
+## Summary
 
+Our team is tasked with developing a weather monitoring system that reads temperature and humidity while filtering out any excess water from the sytem using a motor. The product is meant to be versatile and update values online rapidly and via HMI in the physical product. This device is meant to serve any purpose it may help fulfill but specifically may help archicultrual purposes in crop water exposure and temperature setting, due to the device filtering out water, the device may be self reliant and not have to be reparied constantly. This device may also aid in teaching k-12 students on how sensors operate and the flow chart system of how to create such a device. It may inspire students and spark creativity in developing some of their own devices via a flow chart or even their own physcial product without delving to deep into circuit design.
+---
 
 ## Team Goals  
 - Deliver a high-quality, market-ready product.  
@@ -37,6 +40,14 @@ Our mission is to develop a STEM-oriented, interactive educational display that 
 - Design with sustainability and industry standards in mind.  
 - Create an engaging user experience that promotes STEM education.  
 - Maximize innovation and technical proficiency while addressing real-world challenges.
+
+---
+
+## Final Team Picture
+
+
+
+---
 
 ## Team Coordination & Accountability  
 Our team consists of:  
