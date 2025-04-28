@@ -18,7 +18,7 @@ Welcome! Our team, **Team Fresh Start - Team 308**, is excited to present our in
 ---
 
 ## Mission Statement  
-Our mission is to develop a STEM-oriented, interactive educational display that showcases real-time scientific data in an engaging and intuitive way. The project focuses on inspiring curiosity in K-12 students by providing an energy-efficient and scalable solution that fosters learning through innovative design and functionality.
+Our mission is to develop a STEM-oriented, interactive educational display that showcases real-time scientific data in an engaging and intuitive way. If also applicable this system should cater heavily towards agricultural purposes due to the ability to meaure temperature and humidity while also filtering out water. The project focuses on inspiring curiosity in K-12 students by providing an energy-efficient and scalable solution that fosters learning through innovative design and functionality.
 
 ---
 
