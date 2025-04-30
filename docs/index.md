@@ -18,7 +18,7 @@ Welcome! Our team, **Team Fresh Start - Team 308**, is excited to present our in
 ---
 
 ## Mission Statement  
-Our mission is to develop a STEM-oriented, interactive educational display that showcases real-time scientific data in an engaging and intuitive way. If also applicable this system should cater heavily towards agricultural purposes due to the ability to meaure temperature and humidity while also filtering out water. The project focuses on inspiring curiosity in K-12 students by providing an energy-efficient and scalable solution that fosters learning through innovative design and functionality.
+Our mission is to develop a STEM-oriented, interactive educational display that showcases real-time scientific data in an engaging and intuitive way. If also applicable this system is meant to replicate a AC system that uses chilled water as a coolent that is let into the system via an actuator that allows or disallows the water through the system. The project focuses on inspiring curiosity in K-12 students by providing an energy-efficient and scalable solution that fosters learning through innovative design and functionality.
 
 ---
 
@@ -31,7 +31,7 @@ Our mission is to develop a STEM-oriented, interactive educational display that 
 ---
 ## Summary
 
-Our team is tasked with developing a weather monitoring system that reads temperature and humidity while filtering out any excess water from the sytem using a motor. The product is meant to be versatile and update values online rapidly and via HMI in the physical product. This device is meant to serve any purpose it may help fulfill but specifically may help archicultrual purposes in crop water exposure and temperature setting, due to the device filtering out water, the device may be self reliant and not have to be reparied constantly. This device may also aid in teaching k-12 students on how sensors operate and the flow chart system of how to create such a device. It may inspire students and spark creativity in developing some of their own devices via a flow chart or even their own physcial product without delving to deep into circuit design.
+Our team is tasked with developing a weather monitoring system that reads temperature while the actuator allows the chilled water through the sytstem if the user deems it necessary. any excess water from the sytem using a motor. The product is meant to be versatile and update values online rapidly and via HMI in the physical product. This device is meant to serve any purpose it may help fulfill but specifically may help archicultrual purposes in crop water exposure and temperature setting, due to the device filtering out water, the device may be self reliant and not have to be reparied constantly. This device may also aid in teaching k-12 students on how sensors operate and the flow chart system of how to create such a device. It may inspire students and spark creativity in developing some of their own devices via a flow chart or even their own physcial product without delving to deep into circuit design.
 ---
 
 ## Team Goals  
