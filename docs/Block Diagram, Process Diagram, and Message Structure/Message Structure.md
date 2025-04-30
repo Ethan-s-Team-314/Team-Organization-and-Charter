@@ -52,12 +52,20 @@
 
 ---
 
-## Sanjit to Ethan Command
+## Sanjit Messages to Ethan 
 
 | **Message ID** | **Sender** | **Recipient** | **Description**     |
 |----------------|------------|----------------|---------------------|
-| `FSES03FS`     | Sanjit     | Ethan          | Command to turn on  |
+| `FSSE03FS`     | Sanjit     | Ethan          | Command to turn on  |
 
+## Kevin Messages
+
+| **Message ID** | **Sender** | **Recipient** | **Description**     |
+|----------------|------------|----------------|---------------------|
+| `FSEK00FS`     | Ethan     | Kevin          | Temperature to be sent  |
+| `FSSK01FS`     | Siddhant  | Kevin          | Motor off  |
+| `FSEK02FS`     | Siddhant     | Kevin        | Forward Motor  |
+| `FSEK03FS`     | Siddhant     | Kevin          | Reverse Motor  |
 
 
 
