@@ -51,10 +51,10 @@ Our team is tasked with developing a weather monitoring system that reads temper
 
 ## Team Coordination & Accountability  
 Our team consists of:  
-- **Ethan Peterson**: Assignment Leader  
-- **Kevin Shah**: Documentation Head  
-- **Sanjit Kavitha**: Electrical Head  
-- **Siddhant Kulkarni**: PCB Head
+- **Ethan Peterson**: Assignment Leader   - Ethan@socal.rr.com
+- **Kevin Shah**: Documentation Head  - kshah79@asu.edu
+- **Sanjit Selvakumar Kavitha**: Electrical Head  - sselvak4@asu.edu
+- **Siddhant Kulkarni**: PCB Head - smkulka6@asu.edu
 
 ---
 
