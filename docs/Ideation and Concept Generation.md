@@ -1,7 +1,8 @@
 # **Ideation and Concept Generation**
 
 ## **Team Members**
-Ethan Peterson, Siddhant Kulkarni, Kevin Shah, Sanjit Selvakumar, Kavitha
+
+Ethan Peterson, Siddhant Kulkarni, Kevin Shah, Sanjit Selvakumar
 
 ---
 
@@ -134,6 +135,15 @@ Our decision-making process involved evaluating the best ideas from our brainsto
 If deviations from our initial concept occurred, they were driven by insights gained from testing, research, and expert recommendations.
 
 ---
+How this process Affected the decision making process to create an AC system
+---
+After going through the design process, we encountered several challenges that required us to deviate from our initial ideas. We had to adapt our approach to ensure the system met all requirements, considering the new information that emerged along the way.
+
+We incorporated strong ideas, such as implementing a temperature sensor, which is a versatile component that fulfills multiple class requirements and serves a wide range of purposes. Conversely, we eliminated ineffective elements, such as the sensor's voltage regulator and the decision to hand-solder components like the PIC and ESP, as these led to numerous complications.
+
+Our goal was to develop a highly interactive system, which is why we integrated an MQTT server for data processing. This allowed us to track temperature and motor status, similar to how the HMI system functioned. Additionally, we pursued an ambitious approach by creating an app that enables remote motor control while providing real-time temperature feedback based on motor status.
+
+The concept behind our project was to transition agricultural temperature and filtering systems into a sensor- and actuator-controlled traditional AC system. When the system detects a high temperature, the actuator reverses, permitting chilled water to flow past it and into the cooling system, effectively lowering the room’s temperature. In a real-world implementation, chilled water would need to be actively circulated, but our system focuses on controlling that process efficiently.
 
 Video Presentation
 ---
