@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#team-member-roles" class="md-skip">
+        <a href="#message-structure-design-and-decision-making-process" class="md-skip">
           Skip to content
         </a>
       
@@ -447,6 +447,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#message-structure-design-and-decision-making-process" class="md-nav__link">
+    Message Structure: Design and Decision-Making Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#team-member-roles" class="md-nav__link">
     Team Member Roles
   </a>
@@ -763,6 +770,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#message-structure-design-and-decision-making-process" class="md-nav__link">
+    Message Structure: Design and Decision-Making Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#team-member-roles" class="md-nav__link">
     Team Member Roles
   </a>
@@ -903,6 +917,9 @@
   
 
 
+<hr />
+<h2 id="message-structure-design-and-decision-making-process"><strong>Message Structure: Design and Decision-Making Process</strong></h2>
+<p>Our team's <strong>message structure design</strong> was carefully developed to ensure <strong>clear data transmission</strong>, <strong>efficient routing</strong>, and <strong>precise subsystem interactions</strong>. We structured each message using a <strong>byte-based format</strong>, including clearly defined <strong>headers, source IDs, destination IDs, message data, and footers</strong>, ensuring that all components correctly interpret and respond to data. The decision-making process involved analyzing how each team member’s subsystem contributes to the overall communication flow. <strong>Ethan’s sensor system</strong> collects <strong>temperature and humidity readings</strong> and transmits them via <strong>UART and WiFi</strong>, ensuring accurate environmental monitoring. <strong>Sanjit’s web subsystem</strong> processes and forwards sensor readings to the <strong>MQTT server</strong>, storing and publishing updated data. <strong>Kevin’s HMI subsystem</strong> receives and displays <strong>temperature, humidity, and water flow rate</strong> information, ensuring users have real-time system feedback. <strong>Siddhant’s motor subsystem</strong> uses sensor data to <strong>adjust actuator states</strong>, controlling cooling mechanisms based on temperature levels. The sequence diagram demonstrates how each component interacts, with messages structured to maintain <strong>recurring updates</strong> (automatic temperature readings) and <strong>event-driven interactions</strong> (manual motor adjustments via Bluetooth and UART). Our format also incorporates <strong>system integrity mechanisms</strong>, ensuring valid message transmission without corruption. By structuring our communication logic around a <strong>fixed byte format</strong>, we allow for <strong>scalable, expandable control</strong>, ensuring <strong>seamless data processing across I2C, SPI, UART, and MQTT protocols</strong>. This approach guarantees that our system functions reliably, meeting <strong>user needs and project requirements</strong>, while allowing <strong>real-world implementation for sensor-actuator-controlled cooling systems</strong>.</p>
 <h2 id="team-member-roles">Team Member Roles</h2>
 <table>
 <thead>
