@@ -473,6 +473,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#top-5-changes-to-software-desingn" class="md-nav__link">
+    Top 5 changes to software desingn
+  </a>
+  
+    <nav class="md-nav" aria-label="Top 5 changes to software desingn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-5-biggest-changes-to-software-design-since-the-software-proposal" class="md-nav__link">
+    Top 5 Biggest Changes to Software Design Since the Software Proposal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -658,6 +678,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#top-5-changes-to-software-desingn" class="md-nav__link">
+    Top 5 changes to software desingn
+  </a>
+  
+    <nav class="md-nav" aria-label="Top 5 changes to software desingn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-5-biggest-changes-to-software-design-since-the-software-proposal" class="md-nav__link">
+    Top 5 Biggest Changes to Software Design Since the Software Proposal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -691,6 +731,32 @@
 <p>The sequence begins when a <strong>Web User</strong> requests temperature and humidity readings. The sensor transmits the requested data via <strong>WiFi and UART</strong> to the <strong>MQTT server</strong>, which processes and updates the information. The <strong>HMI system</strong> displays these values, allowing users to track environmental conditions. If temperature levels exceed a threshold, the <strong>motor actuator system</strong> engages, adjusting the <strong>flow of chilled water</strong> to regulate temperature. Additionally, users can manually override motor settings through <strong>Bluetooth or UART</strong>, selecting different speed modes as needed.</p>
 <p>The sequence diagram maintains alignment with the <strong>block diagram</strong>, ensuring that data flows systematically from the <strong>MQTT system</strong> to the <strong>sensor processing module</strong>, then to the <strong>HMI display</strong>, and finally to the <strong>motor control system</strong>. The structured message flow facilitates clear communication between components, with <strong>event-driven interactions</strong> triggering state changes and <strong>recurring updates</strong> maintaining system functionality. The diagram’s progression highlights the <strong>real-world control capabilities</strong> of the design, demonstrating how the system bridges the gap between <strong>user requirements and automated responses</strong>.</p>
 <p>This approach ensures compliance with <strong>class specifications</strong>, including <strong>I2C and UART integration</strong>, while supporting the broader implementation of a <strong>sensor-actuator-controlled cooling system</strong>. The <strong>well-defined communication hierarchy</strong> and <strong>efficient message handling</strong> make this sequence diagram both accessible and directly applicable to the project's objectives.</p>
+<hr />
+<h2 id="top-5-changes-to-software-desingn">Top 5 changes to software desingn</h2>
+<h3 id="top-5-biggest-changes-to-software-design-since-the-software-proposal">Top 5 Biggest Changes to Software Design Since the Software Proposal</h3>
+<ol>
+<li>
+<p><strong>Sensor Rework and Integration</strong><br />
+   Initially, the team encountered issues with sensor selection, requiring multiple iterations to find a reliable temperature and humidity sensor. The previous sensors either failed due to voltage inconsistencies or were incompatible with the system’s communication protocol. The team ultimately selected the <strong>AHT21</strong>, which offered stable data transmission and was easy to integrate using <strong>I2C communication</strong>. This change ensured accurate environmental readings, improving system functionality and satisfying project requirements. The <strong>UML sequence diagram</strong> illustrates how sensor data is properly transmitted via <strong>WiFi and UART</strong>, ensuring reliable communication with the MQTT system and motor subsystem.  </p>
+</li>
+<li>
+<p><strong>HMI Rework for User Interaction and Proper Display</strong><br />
+   The initial HMI design lacked clarity in displaying temperature and humidity readings, creating difficulties for user interaction. The team reworked the HMI structure to properly visualize real-time environmental data, ensuring that users could access updates efficiently. The improvements included optimizing <strong>SPI communication</strong> and refining <strong>display logic</strong>, ensuring that sensor readings were correctly formatted. This refinement is reflected in the <strong>sequence diagram</strong>, where the <strong>HMI now processes and displays information</strong> received from the MQTT system and motor drive, ensuring proper user feedback.  </p>
+</li>
+<li>
+<p><strong>Byte System Redesign for Data Transmission</strong><br />
+   The initial approach to <strong>byte-based communication</strong> caused misinterpretations between subsystems, leading to incorrect actuator responses and inconsistent data flow. The team redefined the <strong>8-byte structure</strong>, ensuring each subsystem clearly understands its role and can process messages accurately. This involved assigning <strong>specific bytes</strong> to <strong>source ID, destination ID, message data, and control flags</strong>, ensuring seamless integration between the <strong>sensor, motor drive, MQTT system, and HMI display</strong>. The <strong>UML diagram</strong> highlights structured message transmission, demonstrating how systems now exchange properly formatted data without errors.  </p>
+</li>
+<li>
+<p><strong>MPLAB Code Functionality and API Integration</strong><br />
+   Initially, there were significant challenges in implementing <strong>MPLAB code</strong> for the <strong>PIC microcontroller</strong>, particularly in defining the API structure for subsystem communication. The team overcame this issue by carefully debugging the MPLAB code and structuring the API so that identification of users and devices followed a logical format. This update allowed <strong>proper recognition of commands</strong> from different components, ensuring seamless message routing. The <strong>UML sequence diagram</strong> now correctly represents this improved interaction, showing how messages flow from the sensor subsystem to the motor drive and MQTT system without data loss or misinterpretation.  </p>
+</li>
+<li>
+<p><strong>Synchronization of Sensor Data Across Subsystems</strong><br />
+   One of the biggest challenges was ensuring that sensor data was <strong>properly translated</strong> across all subsystems so that every component remained in sync. Early versions of the system had <strong>timing mismatches</strong>, causing incorrect actuator responses. The team resolved this by refining <strong>data transmission timing</strong>, adding <strong>delays</strong> where necessary, and ensuring that <strong>each subsystem processes temperature readings in real time</strong>. The <strong>UML diagram</strong> illustrates how information is processed correctly through structured communication delays, ensuring smooth synchronization across all components.  </p>
+</li>
+</ol>
+<p>These refinements ensure that the system meets <strong>user needs, project specifications, and class requirements</strong>, improving both <strong>functionality and real-world applicability</strong>. The <strong>UML sequence diagram</strong> validates these changes by accurately depicting <strong>sensor communication, actuator responses, data transmission, and user interaction</strong> throughout the system.</p>
 
 
 
