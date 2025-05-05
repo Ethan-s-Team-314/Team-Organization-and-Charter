@@ -48,6 +48,7 @@ Our team is tasked with developing a weather monitoring system that reads temper
 
 ## Final Team Picture
 
+![image](https://github.com/user-attachments/assets/398b067d-137c-4084-87be-5fa37c45265c)
 
 
 ---
