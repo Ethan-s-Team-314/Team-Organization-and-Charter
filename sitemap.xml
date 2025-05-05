@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://embedded-systems-design.github.io/template_report/Resources/</loc>
+         <lastmod>2025-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://embedded-systems-design.github.io/template_report/Block%20Diagram%2C%20Process%20Diagram%2C%20and%20Message%20Structure/Block%20Diagram/</loc>
          <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
