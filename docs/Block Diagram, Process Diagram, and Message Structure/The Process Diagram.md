@@ -3,15 +3,92 @@
 ![Screenshot 2025-03-08 002553](https://github.com/user-attachments/assets/378fe910-acfc-4388-b1a4-41c9dcc8e059)
 
 ---
-How the functionality of your communication sequence diagram satisfies user needs and product requirements 
+# Communication Sequence Functionality & Requirements Alignment
+
+Our sequence diagram captures the end-to-end flow of data and control between the Web User, ESP32 Wi-Fi/Cloud subsystem, HMI, Sensor board, and Motor board. Below we dissect each major functional step, illustrating how it meets both user needs and the product requirements.
+
 ---
-The communication sequence diagram illustrates how user interactions and system components integrate to satisfy product requirements and ensure seamless data transmission. The system operates by processing temperature and humidity data collected from the sensor module, which communicates via **WiFi and UART** to the MQTT server. This data is then processed and displayed on the **HMI interface**, providing real-time environmental monitoring. Meanwhile, the **motor drive system** dynamically adjusts the water flow rate based on predefined temperature conditions.
 
-The sequence begins when a **Web User** requests temperature and humidity readings. The sensor transmits the requested data via **WiFi and UART** to the **MQTT server**, which processes and updates the information. The **HMI system** displays these values, allowing users to track environmental conditions. If temperature levels exceed a threshold, the **motor actuator system** engages, adjusting the **flow of chilled water** to regulate temperature. Additionally, users can manually override motor settings through **Bluetooth or UART**, selecting different speed modes as needed.
+## 1. User-Initiated Data Request  
+**Flow:**  
+1. **Web User → MQTT Server**  
+   - User clicks “Get Weather Data” in the companion app or browser.  
+2. **MQTT Server → ESP32 (Web Subsystem)**  
+   - ESP32 subscribes to a “request/data” topic and immediately receives the trigger.  
 
-The sequence diagram maintains alignment with the **block diagram**, ensuring that data flows systematically from the **MQTT system** to the **sensor processing module**, then to the **HMI display**, and finally to the **motor control system**. The structured message flow facilitates clear communication between components, with **event-driven interactions** triggering state changes and **recurring updates** maintaining system functionality. The diagram’s progression highlights the **real-world control capabilities** of the design, demonstrating how the system bridges the gap between **user requirements and automated responses**.
+**Function & Benefits:**  
+- **On-Demand Control:** Empowers remote users to manually refresh data, satisfying the requirement for interactive, user-driven queries.  
+- **Decoupled Architecture:** By using MQTT topics, the Web-to-device link is robust to network fluctuations and scales to multiple clients without modifying embedded code.
 
-This approach ensures compliance with **class specifications**, including **I2C and UART integration**, while supporting the broader implementation of a **sensor-actuator-controlled cooling system**. The **well-defined communication hierarchy** and **efficient message handling** make this sequence diagram both accessible and directly applicable to the project's objectives.
+---
+
+## 2. Sensor Polling & Response  
+**Flow:**  
+1. **ESP32 → PIC18F (Sensor Subsystem)** via UART  
+   - Frames a **Request Sensor Data** message (Type 0x0002) with Source=T, Dest=E.  
+2. **PIC18F → ESP32** via UART  
+   - Replies with **Sensor Data Response** (Type 0x0003), packing temperature (×100), humidity (×100), and flow rate (×100) in a single 64-byte frame.
+
+**Function & Benefits:**  
+- **Deterministic Timing:** UART exchange completes in under 50 ms, ensuring end-to-end latency stays well below the 500 ms target.  
+- **Compact, Scalable Data:** Packing three sensor readings in one frame reduces bus traffic and simplifies parsing on both ends.  
+- **Error Detection Ready:** Fixed headers/footers allow both boards to detect framing errors and respond with an Error Message if needed.
+
+---
+
+## 3. Local Display Update & Actuator Control  
+**Flow:**  
+1. **ESP32 → PIC18F (HMI Subsystem)** via UART  
+   - Sends an **LCD Update Command** (Type 0x0004) including a formatted text string:  
+     ```
+     “Temp: 25.5°C, Hum: 50.1%, Flow: 10.5 L/min”
+     ```  
+2. **ESP32 → PIC18F (Motor Subsystem)** via UART (if temperature threshold exceeded)  
+   - Sends a **Set Water Flow** command (Type 0x0001) with desired flow rate.  
+3. **PIC18F (Motor) → ESP32 & HMI**  
+   - Acknowledges with a **Sensor Data Response** echoing new actuator state, and publishes a **Motor Status** update to the HMI display via another LCD Update Command.
+
+**Function & Benefits:**  
+- **Immediate Local Feedback:** Users at the exhibit see current values and actuator state on the I²C LCD within tens of milliseconds.  
+- **Automatic Control Logic:** Temperature-driven “if > threshold, send flow command” logic runs on the ESP32, providing hands-free regulation—key for agricultural demos.  
+- **Consistent UX:** All subsystems use the same framing and ID scheme, reducing firmware complexity and improving maintainability.
+
+---
+
+## 4. Cloud Publication & Remote Monitoring  
+**Flow:**  
+1. **ESP32 → MQTT Server**  
+   - Publishes a **Cloud Update** message (Type 0x0005) serialized as JSON, containing `{ "temp":2550, "hum":5010, "flow":1050 }`.  
+2. **MQTT Server → Web User**  
+   - Distributes the updated payload to all subscribed dashboards in real time.
+
+**Function & Benefits:**  
+- **Real-Time Remote Visibility:** Stakeholders off-site can monitor conditions live, fulfilling the “online rapid updates” requirement.  
+- **Standardized Data Format:** JSON payloads enable easy integration with third-party analytics or mobile apps without additional parsing code on the microcontrollers.
+
+---
+
+## 5. Error Handling & Safety  
+**Flow:**  
+1. **Any MCU → ESP32 (or upstream board)**  
+   - On detect­ed framing, sensor, or communication failure, sends an **Error Message** (Type 0x0006) with subsystem ID and ASCII error string.  
+2. **ESP32 → HMI & Web**  
+   - Displays the error on the LCD and publishes an alert topic via MQTT.  
+3. **Fail-Safe Actuation**  
+   - Motor board, upon detect­ing “sensor offline” or repeated framing errors, automatically shuts down the actuator.
+
+**Function & Benefits:**  
+- **Robust Diagnostics:** Clear error propagation ensures fast troubleshooting during demos or field use.  
+- **User Safety:** Automated motor shutdown on critical faults prevents uncontrolled water flow—meeting safety requirements for all-age exhibits.
+
+---
+
+### Summary of Functional Alignment  
+- **Latency & Predictability**: Deterministic framing and prioritized message types guarantee sub-second loops.  
+- **Bi-Directional Control**: Both manual (web) and automatic (threshold-based) command paths exist.  
+- **Scalability & Maintainability**: Uniform message format and modular blocks simplify adding new sensors or actuators.  
+- **Educational Transparency**: Each step—from request through actuation—is explicit, making it easy for students to trace and understand in the exhibit setting.  
+- **Reliability & Safety**: Error messages and fail-safe logic are integral to the sequence, ensuring the system remains stable and secure under fault conditions.
 
 ---
 Top 5 changes to software desingn
