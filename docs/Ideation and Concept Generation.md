@@ -62,21 +62,27 @@ This project involves designing a modular system that utilizes UART communicatio
 ### Brainstorming Figures
 
 ![Figure 1.1: Group of All Ideas](https://github.com/user-attachments/assets/1e00de76-5686-465f-b138-50225f9b2257)
+
 *Figure 1.1: Group of All Ideas*
 
 ![Figure 1.2: Remaining Brainstormed Ideas](https://github.com/user-attachments/assets/3b4b366b-1fe7-4888-9008-b8bff55f9f06)
+
 *Figure 1.2: Remaining Brainstormed Ideas*
 
 ![Figure 1.3: Physics & Engineering](https://github.com/user-attachments/assets/5323e01a-194b-4e6a-bae6-79369f9c7c50)
+
 *Figure 1.3: Physics & Engineering*
 
 ![Figure 1.4: Chemistry & Materials Science](https://github.com/user-attachments/assets/4efae097-51d8-4c32-afc8-e6fd8f5d637b)
+
 *Figure 1.4: Chemistry & Materials Science*
 
 ![Figure 1.5: Biology & Life Sciences](https://github.com/user-attachments/assets/d05eb711-f997-4e66-866b-5d0b22dbb364)
+
 *Figure 1.5: Biology & Life Sciences*
 
 ![Figure 1.6: Earth & Space Science](https://github.com/user-attachments/assets/f15dccd1-fe54-4295-9df9-29adfab7508f)
+
 *Figure 1.6: Earth & Space Science*
 
 ---
@@ -84,9 +90,11 @@ This project involves designing a modular system that utilizes UART communicatio
 ## Concept Sketches
 
 ![Figure 5.1](https://github.com/user-attachments/assets/c6580f80-2849-43cd-b637-b025bacc0ccb)
+
 *Figure 5.1 - AI-Generated Representation of Project*
 
 ![Figure 5.2](https://github.com/user-attachments/assets/e3a333c3-b451-4b26-abd6-c3ed7dca48a6)
+
 *Figure 5.2 - Overview of Weather Data Collection System*
 
 ---
