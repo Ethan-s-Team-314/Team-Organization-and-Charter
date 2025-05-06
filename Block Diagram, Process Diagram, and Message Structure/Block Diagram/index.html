@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-did-the-decision-making-process-operate-for-how-we-made-our-block-diagram" class="md-skip">
+        <a href="#block-diagram-decision-making-requirements-alignment" class="md-skip">
           Skip to content
         </a>
       
@@ -429,6 +429,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -457,12 +459,28 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-decision-making-process" class="md-nav__link">
+    1. Decision-Making Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-how-the-block-diagram-meets-product-requirements" class="md-nav__link">
+    2. How the Block Diagram Meets Product Requirements
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#how-did-the-decision-making-process-operate-for-how-we-made-our-block-diagram" class="md-nav__link">
@@ -682,12 +700,28 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-decision-making-process" class="md-nav__link">
+    1. Decision-Making Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-how-the-block-diagram-meets-product-requirements" class="md-nav__link">
+    2. How the Block Diagram Meets Product Requirements
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#how-did-the-decision-making-process-operate-for-how-we-made-our-block-diagram" class="md-nav__link">
@@ -719,13 +753,84 @@
   
 
 
-  <h1>Block Diagram</h1>
-
 <p><strong>Link to Drive:</strong></p>
 <p><a href="https://drive.google.com/drive/folders/19I_488VRz9nsvQRNoa4jgeBesulI3tln?dmr=1&amp;ec=wgc-drive-hero-goto">Block Diagram</a></p>
 <p><strong>Overall Team Subsystem Layout:</strong></p>
 <p><a class="glightbox" href="../Team_Block_Diagram.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screenshot 2025-02-14 at 10 43 03 PM" src="../Team_Block_Diagram.png" /></a></p>
 <p>Look under Individual block diagrams for a closer look into our block diagrams describing the temperature and humidity sensor system.</p>
+<h1 id="block-diagram-decision-making-requirements-alignment">Block Diagram Decision-Making &amp; Requirements Alignment</h1>
+<h2 id="1-decision-making-process">1. Decision-Making Process</h2>
+<ol>
+<li><strong>Role-Based Functional Partitioning</strong>  </li>
+<li><strong>Why</strong>: Each team member owned a distinct subsystem (Sensor, HMI, Motor, Web/MQTT).  </li>
+<li>
+<p><strong>How</strong>: We drew four blocks—Ethan’s Sensor, Kevin’s HMI, Siddhant’s Motor Driver, Sanjit’s Web/MQTT—and showed a linear data flow through them.</p>
+</li>
+<li>
+<p><strong>Daisy-Chain UART Bus</strong>  </p>
+</li>
+<li><strong>Why</strong>: Minimizes wiring complexity and PCB pin usage.  </li>
+<li>
+<p><strong>How</strong>: Added a single upstream and downstream header on each board. Messages hop from one MCU to the next, using the fixed-length header/footer and byte-addressing to reach the intended destination.</p>
+</li>
+<li>
+<p><strong>Local I²C &amp; SPI Buses for Peripherals</strong>  </p>
+</li>
+<li><strong>Why</strong>: LCD, DHT11/BMP180 sensors, and motor driver chips require I²C or SPI.  </li>
+<li>
+<p><strong>How</strong>: Inside each block, we annotated I²C connections to sensors/displays and SPI to the ILI9341 LCD, highlighting protocol separation (UART vs. I²C/SPI).</p>
+</li>
+<li>
+<p><strong>Integrated Wi-Fi/MQTT Link on HMI Board</strong>  </p>
+</li>
+<li><strong>Why</strong>: Eliminates a standalone gateway PCB and leverages the ESP32’s dual role (display control + cloud connectivity).  </li>
+<li>
+<p><strong>How</strong>: Drew the ESP32 Wi-Fi module wired to the same UART bus, with a “cloud” icon linked via Wi-Fi arrows to an external MQTT Server.</p>
+</li>
+<li>
+<p><strong>Dedicated 3.3 V Regulators on Every Board</strong>  </p>
+</li>
+<li><strong>Why</strong>: Guarantees stable power and isolates noise between subsystems.  </li>
+<li><strong>How</strong>: Each block in the diagram includes its own switching regulator symbol between the 9 V barrel jack input and the MCU’s V<sub>DD</sub>.</li>
+</ol>
+<hr />
+<h2 id="2-how-the-block-diagram-meets-product-requirements">2. How the Block Diagram Meets Product Requirements</h2>
+<ul>
+<li><strong>Real-Time Feedback (&lt; 500 ms latency)</strong>  </li>
+<li>UART daisy-chain with deterministic framing ensures predictable message transit times.  </li>
+<li>
+<p>I²C/SPI peripherals respond within microseconds, enabling sub-second end-to-end updates.</p>
+</li>
+<li>
+<p><strong>Modularity &amp; Scalability</strong>  </p>
+</li>
+<li>Clear demarcation of each subsystem allows future boards to “plug in” to the UART chain and be assigned new Source/Dest IDs.  </li>
+<li>
+<p>Students can swap or upgrade a block (e.g., swap DHT11 for a BME280) without redrawing the entire diagram.</p>
+</li>
+<li>
+<p><strong>Educational Clarity</strong>  </p>
+</li>
+<li>
+<p>Linear, left-to-right flow mirrors the physical wiring and power hierarchy, making it easy for K-12 audiences to trace “power → sense → display → actuation → cloud.”</p>
+</li>
+<li>
+<p><strong>Robust Power Architecture</strong>  </p>
+</li>
+<li>
+<p>Separate switching regulators on each PCB guarantee that high-current motor draws do not brown-out sensitive sensor and display circuits.</p>
+</li>
+<li>
+<p><strong>Cloud &amp; Local Interfaces</strong>  </p>
+</li>
+<li>
+<p>Dual interfaces (physical buttons/LCD + MQTT) satisfy both hands-on exhibit requirements and remote monitoring use cases.</p>
+</li>
+<li>
+<p><strong>Error Isolation &amp; Safety</strong>  </p>
+</li>
+<li>Drawing error-message paths (Type 6 frames) in the diagram underlines how each board can report faults back through the same chain, triggering safe shutdowns or alerts on the LCD.</li>
+</ul>
 <hr />
 <h2 id="how-did-the-decision-making-process-operate-for-how-we-made-our-block-diagram">How did the decision making process operate for how we made our block diagram:</h2>
 <p>Our block diagram is a simplified version of what we wanted to create for our project. It demonstrates that we have met the product requirements, as each individual system passed its checkoff by incorporating the necessary components for its subsystem design.</p>
