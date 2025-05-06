@@ -23,10 +23,10 @@ Our mission is to develop a STEM-oriented, interactive educational display that 
 ---
 
 ## 👥 **Meet Our Team**  
-- 🔹 [Ethan Peterson](https://ejpete10.github.io/test_Datasheet.github.io/) - ethan@socal.rr.com  
-- 🔹 [Kevin Shah](https://kshah79.github.io/kshah79/) - kshah79@asu.edu  
-- 🔹 [Sanjit Kavitha](http://sanjitsk.github.io) - sselvak4@asu.edu  
-- 🔹 [Siddhant Kulkarni](https://smkulka6.github.io/smkulka6/) - smkulka6@asu.edu  
+🔹 [Ethan Peterson](https://ejpete10.github.io/test_Datasheet.github.io/) - ethan@socal.rr.com  
+🔹 [Kevin Shah](https://kshah79.github.io/kshah79/) - kshah79@asu.edu  
+🔹 [Sanjit Kavitha](http://sanjitsk.github.io) - sselvak4@asu.edu  
+🔹 [Siddhant Kulkarni](https://smkulka6.github.io/smkulka6/) - smkulka6@asu.edu  
 
 ---
 
