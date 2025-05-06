@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-the-functionality-of-your-communication-sequence-diagram-satisfies-user-needs-and-product-requirements" class="md-skip">
+        <a href="#communication-sequence-functionality-requirements-alignment" class="md-skip">
           Skip to content
         </a>
       
@@ -469,6 +469,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -497,6 +499,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -505,9 +509,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-the-functionality-of-your-communication-sequence-diagram-satisfies-user-needs-and-product-requirements" class="md-nav__link">
-    How the functionality of your communication sequence diagram satisfies user needs and product requirements
+  <a href="#1-user-initiated-data-request" class="md-nav__link">
+    1. User-Initiated Data Request
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sensor-polling-response" class="md-nav__link">
+    2. Sensor Polling &amp; Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-local-display-update-actuator-control" class="md-nav__link">
+    3. Local Display Update &amp; Actuator Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cloud-publication-remote-monitoring" class="md-nav__link">
+    4. Cloud Publication &amp; Remote Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-error-handling-safety" class="md-nav__link">
+    5. Error Handling &amp; Safety
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Error Handling & Safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-functional-alignment" class="md-nav__link">
+    Summary of Functional Alignment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -702,6 +747,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -710,9 +757,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-the-functionality-of-your-communication-sequence-diagram-satisfies-user-needs-and-product-requirements" class="md-nav__link">
-    How the functionality of your communication sequence diagram satisfies user needs and product requirements
+  <a href="#1-user-initiated-data-request" class="md-nav__link">
+    1. User-Initiated Data Request
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sensor-polling-response" class="md-nav__link">
+    2. Sensor Polling &amp; Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-local-display-update-actuator-control" class="md-nav__link">
+    3. Local Display Update &amp; Actuator Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cloud-publication-remote-monitoring" class="md-nav__link">
+    4. Cloud Publication &amp; Remote Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-error-handling-safety" class="md-nav__link">
+    5. Error Handling &amp; Safety
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Error Handling & Safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-functional-alignment" class="md-nav__link">
+    Summary of Functional Alignment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -759,16 +847,78 @@
   
 
 
-  <h1>The Process Diagram</h1>
-
 <p><a href="https://app.diagrams.net/#G1YnGLDMCkIUuk0xOXI2Jxs83gCzxwHKuU#%7B%22pageId%22%3A%22pc2VwhXcHSOIUS0fXVyV%22%7D">Process Diagram</a></p>
 <p><a class="glightbox" href="https://github.com/user-attachments/assets/378fe910-acfc-4388-b1a4-41c9dcc8e059" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screenshot 2025-03-08 002553" src="https://github.com/user-attachments/assets/378fe910-acfc-4388-b1a4-41c9dcc8e059" /></a></p>
 <hr />
-<h2 id="how-the-functionality-of-your-communication-sequence-diagram-satisfies-user-needs-and-product-requirements">How the functionality of your communication sequence diagram satisfies user needs and product requirements</h2>
-<p>The communication sequence diagram illustrates how user interactions and system components integrate to satisfy product requirements and ensure seamless data transmission. The system operates by processing temperature and humidity data collected from the sensor module, which communicates via <strong>WiFi and UART</strong> to the MQTT server. This data is then processed and displayed on the <strong>HMI interface</strong>, providing real-time environmental monitoring. Meanwhile, the <strong>motor drive system</strong> dynamically adjusts the water flow rate based on predefined temperature conditions.</p>
-<p>The sequence begins when a <strong>Web User</strong> requests temperature and humidity readings. The sensor transmits the requested data via <strong>WiFi and UART</strong> to the <strong>MQTT server</strong>, which processes and updates the information. The <strong>HMI system</strong> displays these values, allowing users to track environmental conditions. If temperature levels exceed a threshold, the <strong>motor actuator system</strong> engages, adjusting the <strong>flow of chilled water</strong> to regulate temperature. Additionally, users can manually override motor settings through <strong>Bluetooth or UART</strong>, selecting different speed modes as needed.</p>
-<p>The sequence diagram maintains alignment with the <strong>block diagram</strong>, ensuring that data flows systematically from the <strong>MQTT system</strong> to the <strong>sensor processing module</strong>, then to the <strong>HMI display</strong>, and finally to the <strong>motor control system</strong>. The structured message flow facilitates clear communication between components, with <strong>event-driven interactions</strong> triggering state changes and <strong>recurring updates</strong> maintaining system functionality. The diagram’s progression highlights the <strong>real-world control capabilities</strong> of the design, demonstrating how the system bridges the gap between <strong>user requirements and automated responses</strong>.</p>
-<p>This approach ensures compliance with <strong>class specifications</strong>, including <strong>I2C and UART integration</strong>, while supporting the broader implementation of a <strong>sensor-actuator-controlled cooling system</strong>. The <strong>well-defined communication hierarchy</strong> and <strong>efficient message handling</strong> make this sequence diagram both accessible and directly applicable to the project's objectives.</p>
+<h1 id="communication-sequence-functionality-requirements-alignment">Communication Sequence Functionality &amp; Requirements Alignment</h1>
+<p>Our sequence diagram captures the end-to-end flow of data and control between the Web User, ESP32 Wi-Fi/Cloud subsystem, HMI, Sensor board, and Motor board. Below we dissect each major functional step, illustrating how it meets both user needs and the product requirements.</p>
+<hr />
+<h2 id="1-user-initiated-data-request">1. User-Initiated Data Request</h2>
+<p><strong>Flow:</strong><br />
+1. <strong>Web User → MQTT Server</strong><br />
+   - User clicks “Get Weather Data” in the companion app or browser.<br />
+2. <strong>MQTT Server → ESP32 (Web Subsystem)</strong><br />
+   - ESP32 subscribes to a “request/data” topic and immediately receives the trigger.  </p>
+<p><strong>Function &amp; Benefits:</strong><br />
+- <strong>On-Demand Control:</strong> Empowers remote users to manually refresh data, satisfying the requirement for interactive, user-driven queries.<br />
+- <strong>Decoupled Architecture:</strong> By using MQTT topics, the Web-to-device link is robust to network fluctuations and scales to multiple clients without modifying embedded code.</p>
+<hr />
+<h2 id="2-sensor-polling-response">2. Sensor Polling &amp; Response</h2>
+<p><strong>Flow:</strong><br />
+1. <strong>ESP32 → PIC18F (Sensor Subsystem)</strong> via UART<br />
+   - Frames a <strong>Request Sensor Data</strong> message (Type 0x0002) with Source=T, Dest=E.<br />
+2. <strong>PIC18F → ESP32</strong> via UART<br />
+   - Replies with <strong>Sensor Data Response</strong> (Type 0x0003), packing temperature (×100), humidity (×100), and flow rate (×100) in a single 64-byte frame.</p>
+<p><strong>Function &amp; Benefits:</strong><br />
+- <strong>Deterministic Timing:</strong> UART exchange completes in under 50 ms, ensuring end-to-end latency stays well below the 500 ms target.<br />
+- <strong>Compact, Scalable Data:</strong> Packing three sensor readings in one frame reduces bus traffic and simplifies parsing on both ends.<br />
+- <strong>Error Detection Ready:</strong> Fixed headers/footers allow both boards to detect framing errors and respond with an Error Message if needed.</p>
+<hr />
+<h2 id="3-local-display-update-actuator-control">3. Local Display Update &amp; Actuator Control</h2>
+<p><strong>Flow:</strong><br />
+1. <strong>ESP32 → PIC18F (HMI Subsystem)</strong> via UART<br />
+   - Sends an <strong>LCD Update Command</strong> (Type 0x0004) including a formatted text string:<br />
+     <div class="highlight"><pre><span></span><code>“Temp: 25.5°C, Hum: 50.1%, Flow: 10.5 L/min”
+</code></pre></div>
+2. <strong>ESP32 → PIC18F (Motor Subsystem)</strong> via UART (if temperature threshold exceeded)<br />
+   - Sends a <strong>Set Water Flow</strong> command (Type 0x0001) with desired flow rate.<br />
+3. <strong>PIC18F (Motor) → ESP32 &amp; HMI</strong><br />
+   - Acknowledges with a <strong>Sensor Data Response</strong> echoing new actuator state, and publishes a <strong>Motor Status</strong> update to the HMI display via another LCD Update Command.</p>
+<p><strong>Function &amp; Benefits:</strong><br />
+- <strong>Immediate Local Feedback:</strong> Users at the exhibit see current values and actuator state on the I²C LCD within tens of milliseconds.<br />
+- <strong>Automatic Control Logic:</strong> Temperature-driven “if &gt; threshold, send flow command” logic runs on the ESP32, providing hands-free regulation—key for agricultural demos.<br />
+- <strong>Consistent UX:</strong> All subsystems use the same framing and ID scheme, reducing firmware complexity and improving maintainability.</p>
+<hr />
+<h2 id="4-cloud-publication-remote-monitoring">4. Cloud Publication &amp; Remote Monitoring</h2>
+<p><strong>Flow:</strong><br />
+1. <strong>ESP32 → MQTT Server</strong><br />
+   - Publishes a <strong>Cloud Update</strong> message (Type 0x0005) serialized as JSON, containing <code>{ "temp":2550, "hum":5010, "flow":1050 }</code>.<br />
+2. <strong>MQTT Server → Web User</strong><br />
+   - Distributes the updated payload to all subscribed dashboards in real time.</p>
+<p><strong>Function &amp; Benefits:</strong><br />
+- <strong>Real-Time Remote Visibility:</strong> Stakeholders off-site can monitor conditions live, fulfilling the “online rapid updates” requirement.<br />
+- <strong>Standardized Data Format:</strong> JSON payloads enable easy integration with third-party analytics or mobile apps without additional parsing code on the microcontrollers.</p>
+<hr />
+<h2 id="5-error-handling-safety">5. Error Handling &amp; Safety</h2>
+<p><strong>Flow:</strong><br />
+1. <strong>Any MCU → ESP32 (or upstream board)</strong><br />
+   - On detect­ed framing, sensor, or communication failure, sends an <strong>Error Message</strong> (Type 0x0006) with subsystem ID and ASCII error string.<br />
+2. <strong>ESP32 → HMI &amp; Web</strong><br />
+   - Displays the error on the LCD and publishes an alert topic via MQTT.<br />
+3. <strong>Fail-Safe Actuation</strong><br />
+   - Motor board, upon detect­ing “sensor offline” or repeated framing errors, automatically shuts down the actuator.</p>
+<p><strong>Function &amp; Benefits:</strong><br />
+- <strong>Robust Diagnostics:</strong> Clear error propagation ensures fast troubleshooting during demos or field use.<br />
+- <strong>User Safety:</strong> Automated motor shutdown on critical faults prevents uncontrolled water flow—meeting safety requirements for all-age exhibits.</p>
+<hr />
+<h3 id="summary-of-functional-alignment">Summary of Functional Alignment</h3>
+<ul>
+<li><strong>Latency &amp; Predictability</strong>: Deterministic framing and prioritized message types guarantee sub-second loops.  </li>
+<li><strong>Bi-Directional Control</strong>: Both manual (web) and automatic (threshold-based) command paths exist.  </li>
+<li><strong>Scalability &amp; Maintainability</strong>: Uniform message format and modular blocks simplify adding new sensors or actuators.  </li>
+<li><strong>Educational Transparency</strong>: Each step—from request through actuation—is explicit, making it easy for students to trace and understand in the exhibit setting.  </li>
+<li><strong>Reliability &amp; Safety</strong>: Error messages and fail-safe logic are integral to the sequence, ensuring the system remains stable and secure under fault conditions.</li>
+</ul>
 <hr />
 <h2 id="top-5-changes-to-software-desingn">Top 5 changes to software desingn</h2>
 <h3 id="top-5-biggest-changes-to-software-design-since-the-software-proposal">Top 5 Biggest Changes to Software Design Since the Software Proposal</h3>
