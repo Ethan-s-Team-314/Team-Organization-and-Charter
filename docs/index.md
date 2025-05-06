@@ -3,12 +3,12 @@
 ---
 
 ## 🏛 **Team Details**
-**🔢 Team Number:** 308  
-**📅 Preparation Date:** January 16, 2025  
-**📆 Semester & Year:** Spring 2025  
-**🏫 Institution:** Arizona State University  
-**📖 Course:** EGR 314  
-**👨‍🏫 Instructor:** Prof. Nichols  
+- **🔢 Team Number:** 308  
+- **📅 Preparation Date:** January 16, 2025  
+- **📆 Semester & Year:** Spring 2025  
+- **🏫 Institution:** Arizona State University  
+- **📖 Course:** EGR 314  
+- **👨‍🏫 Instructor:** Prof. Nichols  
 
 ---
 
@@ -18,52 +18,48 @@ Welcome! Our team, **Team Fresh Start - Team 308**, is excited to present our in
 ---
 
 ## Mission Statement  
-Our mission is to develop a STEM-oriented, interactive educational display that showcases real-time scientific data in an engaging and intuitive way. If also applicable this system is meant to replicate a AC system that uses chilled water as a coolent that is let into the system via an actuator that allows or disallows the water through the system. The project focuses on inspiring curiosity in K-12 students by providing an energy-efficient and scalable solution that fosters learning through innovative design and functionality.
+Our mission is to develop a STEM-oriented, interactive educational display that showcases real-time scientific data in an engaging and intuitive way. The system is designed to replicate an **AC system** that uses chilled water as a coolant, with an actuator that allows or disallows water through the system. Our goal is to inspire curiosity in K-12 students by providing an energy-efficient and scalable solution that fosters learning through innovative design and functionality.
 
 ---
 
 ## 👥 **Meet Our Team**  
-🔹 [Ethan Peterson](https://ejpete10.github.io/test_Datasheet.github.io/)  - Ethan@socal.rr.com
-
-🔹 [Kevin Shah](https://kshah79.github.io/kshah79/)  - kshah79@asu.edu
-
-🔹 [Sanjit Kavitha](http://sanjitsk.github.io)  - sselvak4@asu.edu
-
-🔹 [Siddhant Kulkarni](https://smkulka6.github.io/smkulka6/)  - smkulka6@asu.edu
+- 🔹 [Ethan Peterson](https://ejpete10.github.io/test_Datasheet.github.io/) - ethan@socal.rr.com  
+- 🔹 [Kevin Shah](https://kshah79.github.io/kshah79/) - kshah79@asu.edu  
+- 🔹 [Sanjit Kavitha](http://sanjitsk.github.io) - sselvak4@asu.edu  
+- 🔹 [Siddhant Kulkarni](https://smkulka6.github.io/smkulka6/) - smkulka6@asu.edu  
 
 ---
-## Summary
 
-Our team is tasked with developing a weather monitoring system that reads temperature while the actuator allows the chilled water through the sytstem if the user deems it necessary. any excess water from the sytem using a motor. The product is meant to be versatile and update values online rapidly and via HMI in the physical product. This device is meant to serve any purpose it may help fulfill but specifically may help archicultrual purposes in crop water exposure and temperature setting, due to the device filtering out water, the device may be self reliant and not have to be reparied constantly. This device may also aid in teaching k-12 students on how sensors operate and the flow chart system of how to create such a device. It may inspire students and spark creativity in developing some of their own devices via a flow chart or even their own physcial product without delving to deep into circuit design.
+## Project Summary  
+Our team is developing a **weather monitoring system** that reads temperature and controls the flow of chilled water via an actuator. If the user deems it necessary, excess water is expelled using a motor. The product is versatile, providing rapid updates both online and through the physical HMI interface. Though designed for general applications, it may be particularly useful in agricultural settings for regulating crop water exposure and temperature settings.
+
+In addition to its practical applications, the system can be a tool for K-12 students to learn how sensors operate, as well as how to design flowchart-driven devices without delving deeply into complex circuit design.
+
 ---
 
 ## Team Goals  
-- Deliver a high-quality, market-ready product.  
-- Collaborate effectively while maintaining clear communication and meeting deadlines.  
-- Design with sustainability and industry standards in mind.  
-- Create an engaging user experience that promotes STEM education.  
-- Maximize innovation and technical proficiency while addressing real-world challenges.
+- Deliver a high-quality, market-ready product  
+- Collaborate effectively with clear communication and timely deadlines  
+- Design with sustainability and industry standards in mind  
+- Create an engaging user experience that promotes STEM education  
+- Maximize innovation and technical proficiency while addressing real-world challenges
 
 ---
 
 ## Final Team Picture
 
-![image](https://github.com/user-attachments/assets/398b067d-137c-4084-87be-5fa37c45265c)
-
+![Team Picture](docs/final_group_image.jpg)
 
 ---
 
 ## Team Coordination & Accountability  
-Our team consists of:  
 - **Ethan Peterson**: Assignment Leader  
 - **Kevin Shah**: Documentation Head  
 - **Sanjit Selvakumar Kavitha**: Electrical Head  
-- **Siddhant Kulkarni**: PCB Head 
+- **Siddhant Kulkarni**: PCB Head  
 
 ---
 
 <p align="center" style="font-size: 1.2rem; font-weight: bold;">
 © 2025 Team Fresh Start | Arizona State University
 </p>
-
-
