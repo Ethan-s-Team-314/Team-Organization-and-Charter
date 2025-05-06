@@ -1,8 +1,6 @@
 Final Product:
 
-<p align="center">
-  <img src="image1.jpg" alt="Final Product" width="800"/>
-</p>
+![Final Product](image1.jpg){ width=800px }
 
 
 ## Video Presentation
