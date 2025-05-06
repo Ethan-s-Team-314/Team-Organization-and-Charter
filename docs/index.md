@@ -48,7 +48,7 @@ In addition to its practical applications, the system can be a tool for K-12 stu
 
 ## Final Team Picture
 
-![Team Picture](docs/final_group_image.jpg)
+![Team Picture](final_group_image.jpg)
 
 ---
 
