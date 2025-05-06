@@ -29,7 +29,7 @@ Our mission is to develop a STEM-oriented, interactive educational display that 
 
 🔹 [Sanjit Kavitha](http://sanjitsk.github.io)  - sselvak4@asu.edu
 
-🔹 [Siddhant Kulkarni](https://smkulka6.github.io/smkulka6/Individual%20Schematic/)  - smkulka6@asu.edu
+🔹 [Siddhant Kulkarni](https://smkulka6.github.io/smkulka6/)  - smkulka6@asu.edu
 
 ---
 ## Summary
