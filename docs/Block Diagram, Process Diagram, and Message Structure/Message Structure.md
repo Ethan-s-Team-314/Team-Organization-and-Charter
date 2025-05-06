@@ -1,8 +1,62 @@
+# Message Structure: Design & Decision-Making Process
+
+Our team invested significant effort into defining a robust, efficient, and extensible message format. Below is a step-by-step outline of how we arrived at our final design:
+
+1. **Choosing a Fixed-Length Frame**  
+   - **Problem:** Variable-length messages add parsing overhead and dynamic memory requirements on an 8-bit PIC.  
+   - **Decision:** Use a 64-byte, fixed-length frame so each microcontroller can allocate a single static buffer.  
+   - **Benefit:** Simplifies CRC or header/footer checks, avoids heap fragmentation, and guarantees predictable timing.
+
+2. **Implementing Header & Footer Markers**  
+   - **Problem:** Byte-slip and line noise on the UART bus can desynchronize frame boundaries.  
+   - **Decision:** Reserve bytes 0–1 for a unique 2-byte header (`0x41 0x5A`) and bytes 62–63 for a matching footer (`0x59 0x42`).  
+   - **Benefit:** Receivers scan for the header, read exactly 64 bytes, then confirm the footer—minimizing framing errors.
+
+3. **Defining Source & Destination IDs**  
+   - **Problem:** A daisy-chain bus requires a way to route messages hop-by-hop to the correct board.  
+   - **Decision:** Use byte 2 for Source ID and byte 3 for Destination ID, assigned as ASCII codes (`‘E’=0x45`, `‘K’=0x4B`, `‘S’=0x53`, `‘T’=0x54`).  
+   - **Benefit:** Any board can inspect these bytes and either process the frame (if addressed) or forward it downstream.
+
+4. **Compact, Scaled Integer Payloads**  
+   - **Problem:** Floating-point values are slow to convert and inflate message size; we need multiple sensor readings in one frame.  
+   - **Decision:** Encode temperature, humidity, and flow rate as `uint16_t` scaled by 100 (e.g., 25.5 °C → 2550).  
+   - **Benefit:** Packs three readings into 6 bytes, reduces bus traffic, and keeps arithmetic simple on the PIC.
+
+5. **Message Type Field & Enumerations**  
+   - **Problem:** We needed a way to distinguish between control commands, sensor data, display updates, cloud uploads, and error reports.  
+   - **Decision:** Reserve the first two bytes of the payload (bytes 4–5 of the frame) for a 16-bit Message Type code (`0x0001` through `0x0006`).  
+   - **Benefit:** New message types can be added by extending the enumeration; receivers switch on this field to parse the remaining payload appropriately.
+
+6. **Error-Handling Messages**  
+   - **Problem:** Silent failures—like a disconnected sensor or framing error—are difficult to diagnose in a demo or exhibit.  
+   - **Decision:** Define Message Type 6 as an “Error Message,” including one byte for Subsystem ID and up to 55 bytes of ASCII text describing the fault.  
+   - **Benefit:** Boards can log or display human-readable error strings, and the HMI can both alert users locally and publish alerts remotely via MQTT.
+
+7. **Balancing Polling vs. Event-Driven Control**  
+   - **Problem:** Continuous polling can flood the bus; purely event-driven updates risk stale displays.  
+   - **Decision:**  
+     - Schedule periodic “Sensor Data Response” (Type 3) at 1 Hz.  
+     - Allow “Set Water Flow” (Type 1) and “Error Message” (Type 6) to be sent immediately on threshold triggers or fault detection.  
+   - **Benefit:** Ensures live monitoring without bus congestion, while critical commands break through immediately when needed.
+
+8. **Future Scalability Considerations**  
+   - **Problem:** We anticipate adding more sensors or actuators in later iterations.  
+   - **Decision:**  
+     - Reserve unused Message Type codes (0x0007–0x00FF) for future features.  
+     - Keep the header/footer paradigm intact so no existing code needs to change when new types arrive.  
+   - **Benefit:** New subsystems can adopt the same framing and ID scheme, plug into the daisy-chain, and begin communicating with minimal firmware changes.
 
 ---
-**Message Structure: Design and Decision-Making Process**
----
-Our team's **message structure design** was carefully developed to ensure **clear data transmission**, **efficient routing**, and **precise subsystem interactions**. We structured each message using a **byte-based format**, including clearly defined **headers, source IDs, destination IDs, message data, and footers**, ensuring that all components correctly interpret and respond to data. The decision-making process involved analyzing how each team member’s subsystem contributes to the overall communication flow. **Ethan’s sensor system** collects **temperature and humidity readings** and transmits them via **UART and WiFi**, ensuring accurate environmental monitoring. **Sanjit’s web subsystem** processes and forwards sensor readings to the **MQTT server**, storing and publishing updated data. **Kevin’s HMI subsystem** receives and displays **temperature, humidity, and water flow rate** information, ensuring users have real-time system feedback. **Siddhant’s motor subsystem** uses sensor data to **adjust actuator states**, controlling cooling mechanisms based on temperature levels. The sequence diagram demonstrates how each component interacts, with messages structured to maintain **recurring updates** (automatic temperature readings) and **event-driven interactions** (manual motor adjustments via Bluetooth and UART). Our format also incorporates **system integrity mechanisms**, ensuring valid message transmission without corruption. By structuring our communication logic around a **fixed byte format**, we allow for **scalable, expandable control**, ensuring **seamless data processing across I2C, SPI, UART, and MQTT protocols**. This approach guarantees that our system functions reliably, meeting **user needs and project requirements**, while allowing **real-world implementation for sensor-actuator-controlled cooling systems**.
+
+Through strategic choices around frame length, header/footer synchronization, ID-based routing, and carefully enumerated message types, our team crafted a message structure that is:
+
+- **Deterministic**: Predictable timing and bounded bus utilization  
+- **Robust**: Built-in framing checks and explicit error reporting  
+- **Extensible**: Easily accommodates additional message types and subsystems  
+- **Efficient**: Low overhead, integer-only arithmetic, and compact payloads  
+
+This design underpins reliable communication across all four PCBs, meeting both our educational exhibit goals and real-world product requirements.  
+
 
 
 ## Team Member Roles
