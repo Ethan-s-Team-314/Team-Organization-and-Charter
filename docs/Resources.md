@@ -1,5 +1,8 @@
 Final Product:
-![image](image1.jpg)
+
+<p align="center">
+  <img src="image1.jpg" alt="Final Product" width="800"/>
+</p>
 
 
 ## Video Presentation
